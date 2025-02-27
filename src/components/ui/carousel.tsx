@@ -5,12 +5,13 @@ import useEmblaCarousel from "embla-carousel-react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import type { EmblaCarouselType, EmblaOptionsType, EmblaPluginType } from "embla-carousel"
 
-type CarouselApi = any
+type CarouselApi = EmblaCarouselType
 
 type CarouselProps = {
-  opts?: any
-  plugins?: any
+  opts?: EmblaOptionsType
+  plugins?: EmblaPluginType[]
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
 }

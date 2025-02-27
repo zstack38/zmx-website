@@ -6,7 +6,7 @@ export default function AboutPage() {
       <div className="prose prose-lg max-w-none">
         <p className="text-gray-600 mb-6">
           Welcome to ZMX Transport, where excellence meets reliability in the transportation industry. 
-          With years of dedicated service, we've established ourselves as a leading force in the trucking sector, 
+          With years of dedicated service, we have established ourselves as a leading force in the trucking sector, 
           delivering solutions that keep America's supply chain moving forward.
         </p>
 
