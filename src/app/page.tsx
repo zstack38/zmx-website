@@ -1,101 +1,155 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Shield, Clock, Gauge, Users, Heart } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-blue-700 text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl font-bold mb-6 text-white">
+              Your Trusted Chicagoland Partner in Transportation
+            </h1>
+            <p className="text-xl mb-8">
+              Delivering excellence across Chicagoland with reliability, efficiency, and a commitment to exceeding customer expectations.
+            </p>
+            <div className="space-x-4">
+              <Button asChild className="bg-white text-blue-700 hover:bg-blue-50 text-lg">
+                <Link href="/contact">Get a Quote</Link>
+              </Button>
+              <Button asChild className="bg-white text-blue-700 hover:bg-blue-50 text-lg">
+                <Link href="/services">Our Services</Link>
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 border rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-blue-700 mb-3">Regional Excellence</h3>
+              <p className="text-gray-600">
+                Chicagoland based and operated, providing superior transportation services from our Brookfield headquarters.
+              </p>
+            </div>
+            <div className="p-6 border rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-blue-700 mb-3">24/7 Support</h3>
+              <p className="text-gray-600">
+                Round-the-clock customer service to ensure your shipments are always on track.
+              </p>
+            </div>
+            <div className="p-6 border rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-blue-700 mb-3">Versatile Fleet</h3>
+              <p className="text-gray-600">
+                From cargo vans to full semi trucks, we have the right vehicle for your transportation needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-blue-700 text-center mb-12">Our Values</h2>
+          <Carousel 
+            opts={{
+              align: "start",
+              loop: true,
+              skipSnaps: false,
+              startIndex: 0,
+              dragFree: true
+            }}
+            className="w-full max-w-5xl mx-auto"
+          >
+            <CarouselContent>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-6 bg-white rounded-xl shadow-sm border h-full">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                      <Shield className="h-6 w-6 text-blue-700" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-700 mb-3">Safety</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Prioritizing the safety of drivers, staff, and the public. This includes maintaining vehicles, following road regulations, and investing in driver training.
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-6 bg-white rounded-xl shadow-sm border h-full">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                      <Clock className="h-6 w-6 text-blue-700" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-700 mb-3">Reliability</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Ensuring on-time delivery and dependable service. Customers should be able to count on the company to meet deadlines.
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-6 bg-white rounded-xl shadow-sm border h-full">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                      <Gauge className="h-6 w-6 text-blue-700" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-700 mb-3">Efficiency</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Optimizing routes, fuel consumption, and logistics to provide cost-effective services.
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-6 bg-white rounded-xl shadow-sm border h-full">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                      <Users className="h-6 w-6 text-blue-700" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-700 mb-3">Customer Focus</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Building strong relationships with clients, understanding their needs, and delivering excellent customer service.
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-6 bg-white rounded-xl shadow-sm border h-full">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                      <Heart className="h-6 w-6 text-blue-700" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-700 mb-3">Integrity</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Operating with honesty and transparency in all dealings, whether with clients, employees, or suppliers.
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
     </div>
   );
 }
